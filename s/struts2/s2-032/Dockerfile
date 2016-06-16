@@ -10,11 +10,10 @@ WORKDIR /tmp
 RUN set -ex \
     && rm -rf /usr/local/tomcat/webapps/* \
     && curl -fSL "$APP_ZIP_URL" -o struts-apps.zip \
-    && curl -fSL "$TOMCAT_TGZ_URL.asc" struts-apps.zip.asc \
-    && gpg --batch --verify struts-apps.zip.asc struts-apps.zip \
     && unzip -j struts-apps.zip -d struts-apps \
     && mv struts-apps/apps/struts2-showcase.war /usr/local/tomcat/webapps/ROOT.war \
-    && rm -rf struts-*
+    && chmod a+x /usr/local/tomcat/bin/*.sh \
+    && rm -rf struts*
 
 EXPOSE 8080
 
