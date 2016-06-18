@@ -4,9 +4,12 @@
 
 > 喜欢请点 Star，如果不打算贡献，千万别 Fork
 
-本项目 DockerHub 在线镜像地址: [https://hub.docker.com/r/medicean/vulapps/](https://hub.docker.com/r/medicean/vulapps/)
-
 本项目 GitHub 地址: [https://github.com/Medicean/VulApps](https://github.com/Medicean/VulApps)
+
+[DockerHub 在线镜像地址](https://hub.docker.com/r/medicean/vulapps/)
+
+[阿里云国内镜像地址](https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.dSEVsG&repoId=7616)
+
 
 ## 获取并使用相关镜像
 
@@ -18,6 +21,12 @@
 
  ```
 docker pull medicean/vulapps:s_struts2_s2-037
+ ```
+
+ 如果使用的是阿里云镜像地址：
+
+ ```
+docker pull registry.aliyuncs.com/medicean/vulapps:s_struts2_s2-037
  ```
 
 2. 创建并启动容器
