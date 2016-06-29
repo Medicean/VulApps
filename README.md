@@ -59,9 +59,14 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 
 ## 组件首字母
 
+* [B](#b)
 * [S](#s)
 
 ## 漏洞环境
+
+### [B](./b/)<div id="b"></div>
+
+* [Bash](./s/bash/)
 
 ### [S](./s/)<div id="s"></div>
 
