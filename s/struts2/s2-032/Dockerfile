@@ -15,9 +15,13 @@ RUN set -ex \
     && chmod a+x /usr/local/tomcat/bin/*.sh \
     && rm -rf struts*
 
+RUN /usr/local/tomcat/bin/startup.sh \
+    && /usr/local/tomcat/bin/shutdown.sh \
+    && sed -i '/<security-constraint>/c<!--\n<security-constraint>' /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml \
+    && sed -i '/<\/security-constraint>/c<\/security-constraint> -->' /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml
 EXPOSE 8080
-
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
 
 # 1. docker build .
 # 2. docker run -d -p 80:8080 xxxxxx
+# http://localhost/struts2-showcase/
