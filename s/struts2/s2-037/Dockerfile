@@ -3,22 +3,16 @@ FROM tomcat:8-jre8
 MAINTAINER Medici.Yan@Gmail.com
 
 ENV S2_VERSION 2.3.20.1
-ENV APP_ZIP_URL http://archive.apache.org/dist/struts/2.3.20.1/struts-$S2_VERSION-apps.zip
+ENV APP_ZIP_URL https://raw.githubusercontent.com/Medicean/VulApps/master/s/struts2/s2-037/
 
 WORKDIR /tmp
 
 RUN set -ex \
     && rm -rf /usr/local/tomcat/webapps/* \
-    && curl -fSL "$APP_ZIP_URL" -o struts-apps.zip \
-    && unzip -j struts-apps.zip -d struts-apps \
-    && mv struts-apps/struts2-rest-showcase.war /usr/local/tomcat/webapps/ROOT.war \
-    && chmod a+x /usr/local/tomcat/bin/*.sh \
-    && rm -rf struts*
+    && curl -fSL "$APP_ZIP_URL" -o struts2-rest.war \
+    && mv struts2-rest.war /usr/local/tomcat/webapps/ROOT.war \
+    && chmod a+x /usr/local/tomcat/bin/*.sh
 
-RUN /usr/local/tomcat/bin/startup.sh \
-    && /usr/local/tomcat/bin/shutdown.sh \
-    && sed -i '/<security-constraint>/c<!--\n<security-constraint>' /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml \
-    && sed -i '/<\/security-constraint>/c<\/security-constraint> -->' /usr/local/tomcat/webapps/ROOT/WEB-INF/web.xml
 EXPOSE 8080
 
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
