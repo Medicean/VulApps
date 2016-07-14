@@ -2,8 +2,7 @@
 FROM tomcat:8-jre8
 MAINTAINER Medici.Yan@Gmail.com
 
-ENV S2_VERSION 2.3.20.1
-ENV APP_ZIP_URL https://raw.githubusercontent.com/Medicean/VulApps/master/s/struts2/s2-037/
+ENV APP_ZIP_URL https://raw.githubusercontent.com/Medicean/VulApps/master/s/struts2/s2-037/struts2-rest.war
 
 WORKDIR /tmp
 

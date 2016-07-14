@@ -2,7 +2,7 @@
 FROM tomcat:8-jre8
 MAINTAINER Medici.Yan@Gmail.com
 
-ENV APP_ZIP_URL https://raw.githubusercontent.com/Medicean/VulApps/master/s/struts2/s2-032/
+ENV APP_ZIP_URL https://raw.githubusercontent.com/Medicean/VulApps/master/s/struts2/s2-032/s2-032.war
 
 WORKDIR /tmp
 
