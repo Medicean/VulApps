@@ -1,4 +1,4 @@
-# S2-033 Vul Demo
+# S2-devMode Vul Demo
 FROM medicean/vulapps:s_struts2_s2-037
 MAINTAINER Medici.Yan@Gmail.com
 
