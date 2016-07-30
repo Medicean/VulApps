@@ -2,16 +2,13 @@
 FROM tomcat:8-jre8
 MAINTAINER Medici.Yan@Gmail.com
 
-ENV APP_ZIP_URL https://raw.githubusercontent.com/Medicean/VulApps/master/s/struts2/s2-032/s2-032.war
-
 WORKDIR /tmp
 
 RUN set -ex \
     && rm -rf /usr/local/tomcat/webapps/* \
-    && curl -fSL "$APP_ZIP_URL" -o s2-032.war \
-    && mv s2-032.war /usr/local/tomcat/webapps/ROOT.war \
     && chmod a+x /usr/local/tomcat/bin/*.sh
 
+COPY s2-032.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
 
