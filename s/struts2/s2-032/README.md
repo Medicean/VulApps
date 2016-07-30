@@ -27,3 +27,8 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-032
 
 访问 `https://你的 IP 地址:端口号/`
 
+### 改动日志
+
+20160731
+
+ * 修正资源为本地路径
