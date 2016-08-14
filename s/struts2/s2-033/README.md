@@ -25,4 +25,4 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-033
 
 ### 使用与利用
 
-访问 `https://你的 IP 地址:端口号/`
+访问 `http://你的 IP 地址:端口号/`
