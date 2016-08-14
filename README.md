@@ -8,9 +8,6 @@
 
 [DockerHub 在线镜像地址](https://hub.docker.com/r/medicean/vulapps/)
 
-[阿里云国内镜像地址](https://dev.aliyun.com/detail.html?spm=5176.1972343.2.2.dSEVsG&repoId=7616)
-
-
 ## 获取并使用相关镜像
 
 > 直接使用 docker 命令拉取相关镜像，并启动。需要查看相关环境的 tag
@@ -23,11 +20,7 @@
 docker pull medicean/vulapps:s_struts2_s2-037
  ```
 
- 如果使用的是阿里云镜像地址：
-
- ```
-docker pull registry.aliyuncs.com/medicean/vulapps:s_struts2_s2-037
- ```
+ > 如果获取速度慢，推荐使用 [中科大 Docker Mirrors](https://lug.ustc.edu.cn/wiki/mirrors/help/docker)
 
 2. 创建并启动容器
 
@@ -62,6 +55,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 * [B](#b)
 * [O](#o)
 * [S](#s)
+* [W](#w)
 
 ## 漏洞环境
 
@@ -77,3 +71,6 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 
 * [Struts2](./s/struts2/)
 
+### [W](./w/)<div id="w"></div>
+
+* [WordPress](./w/wordpress/)
