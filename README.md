@@ -56,6 +56,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 * [O](#o)
 * [S](#s)
 * [W](#w)
+* [Z](#z)
 
 ## 漏洞环境
 
@@ -74,3 +75,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 ### [W](./w/)<div id="w"></div>
 
 * [WordPress](./w/wordpress/)
+
+### [Z](./z/)<div id="z"></div>
+
+* [Zabbix](./z/zabbix/)
