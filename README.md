@@ -53,6 +53,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 ## 组件首字母
 
 * [B](#b)
+* [I](#i)
 * [O](#o)
 * [S](#s)
 * [W](#w)
@@ -63,6 +64,10 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 ### [B](./b/)<div id="b"></div>
 
 * [Bash](./b/bash/)
+
+### [I](./i/)<div id="i"></div>
+
+* [ImageMagick](./i/imagemagick/)
 
 ### [O](./o/)<div id="o"></div>
 
