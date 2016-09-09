@@ -8,10 +8,7 @@ RUN set -ex \
     && rm -rf /usr/local/tomcat/webapps/* \
     && chmod a+x /usr/local/tomcat/bin/*.sh
 
-COPY struts2-rest.war /usr/local/tomcat/webapps/ROOT.war
+COPY src/struts2-rest.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
-
-# 1. docker build .
-# 2. docker run -d -p 80:8080 xxxxxx

@@ -32,3 +32,7 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 20160731
 
  * 修正资源为本地路径
+
+20160909
+
+ ＊ 修正开启 devMode 后导致找不到类的问题
