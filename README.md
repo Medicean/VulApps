@@ -57,6 +57,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 * [I](#i)
 * [J](#j)
 * [O](#o)
+* [R](#r)
 * [S](#s)
 * [W](#w)
 * [Z](#z)
@@ -82,6 +83,10 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 ### [O](./o/)<div id="o"></div>
 
 * [OpenSSL](./o/openssl/)
+
+### [R](./r/)<div id="r"></div>
+
+* [Redis](./r/redis/)
 
 ### [S](./s/)<div id="s"></div>
 
