@@ -10,7 +10,7 @@
 
 ## 获取并使用相关镜像
 
-> 直接使用 docker 命令拉取相关镜像，并启动。需要查看相关环境的 tag 可以直接在 dockerhub 查看或在具体的漏洞目录下查看 ReadME 文件。
+> 直接使用 docker 命令拉取相关镜像，并启动。需要查看相关环境的 tag 可以直接在 dockerhub 查看或在具体的漏洞目录下查看 README 文件。
 
 以 Struts2 S2-037 漏洞环境为例：
 
@@ -71,6 +71,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 ### [C](./c/)<div id="c"></div>
 
 * [Cisco](./c/cisco/)
+* [CmsEasy](./c/cmseasy/)
 
 ### [I](./i/)<div id="i"></div>
 

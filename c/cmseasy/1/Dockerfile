@@ -1,0 +1,1 @@
+FROM medicean/vulapps:base_cmseasy_5_6_20160825
