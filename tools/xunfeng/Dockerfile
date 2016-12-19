@@ -11,7 +11,7 @@ ENV MONGODB_TGZ https://sec.ly.com/mirror/mongodb-linux-x86_64-3.4.0.tgz
 # install requirements
 
 RUN set -x \
-    && sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
+    # && sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y wget unzip gcc libssl-dev libffi-dev python-dev libpcap-dev python-pip \
     && pip install pymongo Flask xlwt paramiko \
