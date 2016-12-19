@@ -1,3 +1,4 @@
 use xunfeng
 db.createUser({user:'scan',pwd:'scanlol66',roles:[{role:'dbOwner',db:'xunfeng'}]})
+db.auth('scan', 'scanlol66')
 exit
