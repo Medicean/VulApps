@@ -24,7 +24,7 @@ RUN set -x \
 
 ENV PATH /opt/node/bin:/opt/mongodb/bin:$PATH
 
-COPY src/mongoauth /tmp/mongoauth
+COPY src/mongoauth /opt/mongodb/mongoauth
 COPY src/start.sh /start.sh
 
 # install xunfeng
@@ -36,8 +36,8 @@ RUN set -x \
     && chmod a+x /opt/xunfeng/masscan/linux_64/masscan \
     && (nohup mongod --port 65521 --dbpath /opt/mongodb/data &) \
     && mongorestore -h 127.0.0.1 --port 65521 -d xunfeng /opt/xunfeng/db/ \
-    && (mongo 127.0.0.1:65521/xunfeng < /tmp/mongoauth) \
-    && rm -f /tmp/mongoauth \
+    && (mongo 127.0.0.1:65521/xunfeng < /opt/mongodb/mongoauth) \
+    # && rm -f /opt/mongodb/mongoauth \
     && chmod a+x /start.sh
 
 EXPOSE 80
