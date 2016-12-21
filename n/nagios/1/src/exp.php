@@ -309,7 +309,7 @@ sup {
 
 <body>
 
-<h2 id="toc_0">WordPress Mailpress Plugin 远程代码执行漏洞</h2>
+<h2 id="toc_0">Nagios Core < 4.2.2 代码执行漏洞（CVE-2016-9565）</h2>
 
 <h3 id="toc_1">漏洞信息</h3>
 
