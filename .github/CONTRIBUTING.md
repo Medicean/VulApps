@@ -27,7 +27,7 @@ CONTRIBUTING to VulApps
 
 > 一律采取小写
 > 
-> 唯一编号推荐使用 uuid4 `$ python -c "print __import__('uuid').uuid4()"`
+> 唯一编号使用阿拉伯数字
 
 ```
 .
@@ -43,13 +43,13 @@ CONTRIBUTING to VulApps
 │   ├── README.md
 │   └── bash
 │       ├── README.md
-│       ├── 7d116603-c066-4821-8a5f-5dc0d39d71c7
-│       └── 1d7b5557-e074-4114-ace5-50c110032cb5
+│       ├── 1
+│       └── 2
 └── s
     ├── README.md
     └── struts2
         ├── README.md
-        └── 3f9af03f-3800-4f4e-807f-19c05f94e9d1
+        └── 1
 ```
 
 ### <a name="files"></a>漏洞环境文件说明
@@ -60,10 +60,12 @@ CONTRIBUTING to VulApps
 ├── poc.py       检测插件
 ├── exp.py       漏洞利用程序
 ├── Dockerfile
-└── src          构建所需要的配置文件(超过 10MB 的请使用外链，推荐7牛)
+└── src          构建所需要的配置文件(**超过 10MB 的请使用外链**，推荐7牛)
     ├── ...
     └── ...
 ```
+
+**源码包强烈建议使用外链，通过 wget 方式下载到容器中，Github 单仓库限制1GB**
 
 ### <a name="commit"></a>Commit 规范
 
