@@ -1,5 +1,6 @@
 FROM ubuntu:14.04
-
+MAINTAINER Medici.Yan@Gmail.com
+ENV LC_ALL C.UTF-8
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -9,9 +10,13 @@ ENV XUNFENG_ZIP https://github.com/ysrc/xunfeng/archive/master.zip
 ENV MONGODB_TGZ https://sec.ly.com/mirror/mongodb-linux-x86_64-3.4.0.tgz
 
 # install requirements
+# RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
+#     && mkdir -p ~/.pip \
+#     && echo "[global]" > ~/.pip/pip.conf \
+#     && echo "timeout=60" >> ~/.pip/pip.conf \
+#     && echo "index-url = https://pypi.tuna.tsinghua.edu.cn/simple" >> ~/.pip/pip.conf
 
 RUN set -x \
-    # && sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y wget unzip gcc libssl-dev libffi-dev python-dev libpcap-dev python-pip \
     && pip install pymongo Flask xlwt paramiko \
@@ -22,7 +27,7 @@ RUN set -x \
     && rm -rf /tmp/mongodb.tgz \
     && mkdir -p /opt/mongodb/data
 
-ENV PATH /opt/node/bin:/opt/mongodb/bin:$PATH
+ENV PATH /opt/mongodb/bin:$PATH
 
 COPY src/mongoauth /opt/mongodb/mongoauth
 COPY src/start.sh /start.sh
