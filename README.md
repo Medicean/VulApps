@@ -24,7 +24,7 @@
 docker pull medicean/vulapps:s_struts2_s2-037
  ```
 
- > 如果获取速度慢，推荐使用 [中科大 Docker Mirrors](https://lug.ustc.edu.cn/wiki/mirrors/help/docker)
+ > 如果获取速度慢，推荐使用 [中科大 Docker Mirrors](https://lug.ustc.edu.cn/wiki/mirrors/help/docker) 或者使用 [阿里云 Mirrors(加速器)](https://cr.console.aliyun.com/#/accelerator)
 
 2. 创建并启动容器
 
