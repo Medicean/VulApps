@@ -1,4 +1,4 @@
-## WordPress Plugin Product Catalog 8 1.2.0 SQL注入漏洞环境
+## WordPress 4.7.0/4.7.1 REST API 内容注入漏洞
 
 ### 漏洞信息
 

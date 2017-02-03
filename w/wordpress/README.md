@@ -5,3 +5,4 @@ WordPress
 2. [WordPress Mailpress Plugin <= 4.5.2 远程代码执行漏洞](2/)
 3. [WordPress CYSTEME Finder 1.3 任意文件读取漏洞](3/)
 4. [WordPress Plugin Product Catalog 8 1.2.0 SQL注入漏洞](4/)
+5. [WordPress 4.7.0/4.7.1 REST API 内容注入漏洞](5/)
