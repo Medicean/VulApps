@@ -22,7 +22,9 @@ $home = 'http://'.$_SERVER['HTTP_HOST'];
 $siteurl = 'http://'.$_SERVER['HTTP_HOST'];
 define('WP_HOME', $home);
 define('WP_SITEURL', $siteurl);
-
+// disable auto update
+define('WP_AUTO_UPDATE_CORE', false);
+define('AUTOMATIC_UPDATER_DISABLED', true);
 // ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
 /** WordPress数据库的名称 */
 define('DB_NAME', 'wordpress');

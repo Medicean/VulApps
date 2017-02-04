@@ -21,6 +21,9 @@ $home = 'http://'.$_SERVER['HTTP_HOST'];
 $siteurl = 'http://'.$_SERVER['HTTP_HOST'];
 define('WP_HOME', $home);
 define('WP_SITEURL', $siteurl);
+// disable auto update
+define('WP_AUTO_UPDATE_CORE', false);
+define('AUTOMATIC_UPDATER_DISABLED', true);
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'wordpress');
