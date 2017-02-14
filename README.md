@@ -49,7 +49,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 
 ## 安全工具环境
 
-* [巡风](./toos/xunfeng/)
+* [巡风](./tools/xunfeng/)
 
 ## 漏洞环境
 
@@ -74,6 +74,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 ### [N](./j/)<div id="n"></div>
 
 * [Nagios](./nagios/)
+* [Node.js](./nodejs/)
 
 ### [O](./o/)<div id="o"></div>
 
