@@ -34,12 +34,12 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-046
 
 2. 修改 `poc.py` 中地址为容器地址
 
- > 该漏洞需要配合上传表单使用，所以传入的 arg 为 Form 表单，详细见：http://doc.bugscan.net/chapter2/2-8.html
+ > 该漏洞无需配合上传表单使用
 
  ```
 if __name__ == '__main__':
     from dummy import *
-    audit(assign(fingerprint.www_form, {'action': 'http://127.0.0.1:8080/doUpload.action', 'inputs': [{'type': u'file', 'name': u'upload', 'value': u'file'}],'ref': 'http://127.0.0.1:8080/doUpload.action', 'method': u'post'})[1])
+    audit(assign(fingerprint.struts, 'http://127.0.0.1:8080/')[1])
 
  ```
 
