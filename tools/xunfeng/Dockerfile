@@ -19,7 +19,6 @@ ENV MONGODB_TGZ https://sec.ly.com/mirror/mongodb-linux-x86_64-3.4.0.tgz
 RUN set -x \
     && apt-get update \
     && apt-get install -y wget unzip gcc libssl-dev libffi-dev python-dev libpcap-dev python-pip \
-    && pip install pymongo Flask xlwt paramiko \
     && ln -s /usr/lib/x86_64-linux-gnu/libpcap.so /usr/lib/x86_64-linux-gnu/libpcap.so.1 \
     && wget -qO /tmp/mongodb.tgz $MONGODB_TGZ \
     && mkdir -p /opt/mongodb \
@@ -38,6 +37,7 @@ RUN set -x \
     && unzip -x /tmp/xunfeng.zip -d /opt/ \
     && rm -rf /tmp/xunfeng.zip \
     && mv /opt/xunfeng-master /opt/xunfeng \
+    && pip install -r /opt/xunfeng/requirements.txt \
     && chmod a+x /opt/xunfeng/masscan/linux_64/masscan \
     && (nohup mongod --port 65521 --dbpath /opt/mongodb/data &) \
     && mongorestore -h 127.0.0.1 --port 65521 -d xunfeng /opt/xunfeng/db/ \

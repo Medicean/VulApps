@@ -1,6 +1,8 @@
 巡风 
 ---
 
+**巡风官方已经推出Docker环境，体验新版本建议直接使用官方镜像**
+
 [项目地址： https://github.com/ysrc/xunfeng](https://github.com/ysrc/xunfeng)
 
 ### 工具简介
