@@ -25,25 +25,9 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-045
 
 #### PoC
 
-> 本例中使用 [Struts2_Jakarta_Plugin插件远程代码执行漏洞(S2-045) ](http://www.bugscan.net/source/plugin/4769/template/)
-
-
-1. 下载并安装 `BugScan SDK`
-
- 详见 [BugScan 插件开发文档 - 环境配置](http://doc.bugscan.net/chapter1/1-1.html)
-
-2. 修改 `poc.py` 中地址为容器地址
+运行 `poc.py`
 
  ```
-if __name__ == '__main__':
-    from dummy import *
-    audit(assign(fingerprint.wordpress, "http://127.0.0.1:8080/memoindex.action")[1])
-
+$ python poc.py <url> <cmd>
  ```
-
-3. 运行 `poc.py`
-
- ```
-$ python poc.py
- ```
-
+![](s2-045-1)
