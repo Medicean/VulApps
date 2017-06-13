@@ -4,6 +4,7 @@
 
  * [S2-001 公告](http://struts.apache.org/docs/s2-001.html)
  
+参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html)
 
 ### 获取环境:
 
