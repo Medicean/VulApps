@@ -30,4 +30,4 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-045
  ```
 $ python poc.py <url> <cmd>
  ```
-![](s2-045-1)
+![](s2-045-1.png)
