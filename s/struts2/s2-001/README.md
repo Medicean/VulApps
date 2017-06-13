@@ -36,3 +36,4 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-001
 ![](S2-001-1.png)
 
 ![](S2-001-2.png)
+
