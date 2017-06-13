@@ -25,7 +25,7 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-008
 
 访问 `http://你的 IP 地址:端口号/`
 
-#### Poc
+#### Exp
 
 命令执行
 
