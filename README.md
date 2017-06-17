@@ -101,6 +101,7 @@ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-037
 * [Shiro](./s/shiro/)
 * [Spring Boot](./s/springboot/)
 * [Struts2](./s/struts2/)
+* [Spring WebFlow](./s/springwebflow/)
 
 ### [W](./w/)<div id="w"></div>
 
