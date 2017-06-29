@@ -16,7 +16,8 @@ RUN curl -fSL "http://oe58q5lw3.bkt.clouddn.com/d/drupal/drupal/drupal-${DRUPAL_
     && echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c - \
     && tar -xz --strip-components=1 -f drupal.tar.gz \
     && rm drupal.tar.gz \
-    && tar -zxf files.tar.gz --strip-components=1 -C /var/www/html/sites/default/files \
+    && ls -al /var/www/html/sites/default \
+    && tar -zxf /tmp/files.tar.gz -C /var/www/html/sites/default/ \
     && rm /tmp/files.tar.gz \
     && chown -R www-data:www-data sites modules themes
 
