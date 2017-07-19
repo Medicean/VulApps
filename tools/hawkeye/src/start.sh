@@ -13,14 +13,18 @@ if [[ "$MAIL_USER" && "$MAIL_PASSWORD" ]]; then
     sed -i "s/mailpassword/${MAIL_PASSWORD}/g" /opt/hawkeye/config.ini
 else
     echo "Email Disabled."
-    echo "You can set MAIL_USER, MAIL_PASSWORD, MAIL_SERVER to enable Email."
-    echo "Deault MAIL_SERVER = smtp.qq.com "
+    echo "You can set MAIL_USER, MAIL_PASSWORD, MAIL_SERVER, MAIL_PORT to enable Email."
+    echo "Default MAIL_SERVER = smtp.qq.com "
+    echo "Default MAIL_PORT = 587 "
 fi
 
 if [[ "$MAIL_SERVER" ]]; then
     sed -i "s/smtp.qq.com/${MAIL_SERVER}/g" /opt/hawkeye/config.ini
 fi
 
+if [[ "$MAIL_PORT" ]]; then
+    sed -i "s/MAIL_PORT = 587/MAIL_PORT = ${MAIL_PORT}/g" /opt/hawkeye/config.ini
+fi
 
 /usr/sbin/cron restart
 /etc/init.d/mongodb restart

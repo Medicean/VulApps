@@ -1,7 +1,9 @@
 Hawkeye
 ---
 
-[项目地址： https://github.com/0xbug/Hawkeye](https://github.com/0xbug/Hawkeye)
+项目地址：[https://github.com/0xbug/Hawkeye](https://github.com/0xbug/Hawkeye)
+
+工具作者：0xbug
 
 ### 工具简介
 
@@ -34,10 +36,10 @@ $ docker run -d -p 8000:80 -e GITHUB_USER=xxxx -e GITHUB_PASSWORD=xxxx medicean/
 
  **Github 账号设置（必须）**
 
-类型 | 环境变量名 | 默认
-:-:|:-:|:-:
-GitHub账号 | `GITHUB_USER` | github-username
-GitHub密码 | `GITHUB_PASSWORD` | github-password
+类型 | 环境变量名 | 默认 | 是否必须
+:-:|:-:|:-:|:-:
+GitHub账号 | `GITHUB_USER` | - | 是
+GitHub密码 | `GITHUB_PASSWORD` | - | 是
 
 访问: `http://127.0.0.1:8000/` 正常访问则代表安装成功
 
@@ -46,17 +48,20 @@ GitHub密码 | `GITHUB_PASSWORD` | github-password
  **邮件服务设置**
  > 如果需要自动设置邮件服务，则需要在启动时指定环境变量
  
- 类型 | 环境变量名 | 默认
+ 类型 | 环境变量名 | 默认 
 :-:|:-:|:-:
-邮箱账号 | `MAIL_USER` | email@user.com
-邮箱密码 | `MAIL_PASSWORD` | email-password
+邮箱账号 | `MAIL_USER` | -
+邮箱密码 | `MAIL_PASSWORD` | -
 SMTP服务器 | `MAIL_SERVER` | smtp.qq.com
+SMTP服务器端口 | `MAIL_PORT` | 587
 
  eg: 指定一个 QQ 邮箱来作为发信邮箱(默认使用的是QQ的发信服务器，所以不需要设置)：
  
  ```
  $ docker run -d -p 8000:80 -e GITHUB_USER=xxxx -e GITHUB_PASSWORD=xxxx -e MAIL_USER =546074829@qq.com -e MAIL_PASSWORD=123456 medicean/vulapps:tools_hawkeye
  ```
+
+ > 如果使用QQ邮箱，这里不需要使用真实的密码，可在 QQ 邮箱-> 设置 -> 账户 中设置授权码
 
 ### 截图
 
