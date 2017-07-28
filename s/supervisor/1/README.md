@@ -16,7 +16,9 @@ Supervisor 是用 Python 开发的一套通用的进程管理程序，能将一�
 
 类型 | 用户名 | 密码
 :-:|:-:|:-:
-http://xxx/9001/RPC2 | vulapps | vulapps
+http://127.0.0.1/9001/RPC2 | vulapps | vulapps
+
+> 本环境默认无认证，如需开启，请修改 `/etc/supervisor.conf` 文件
 
 ### 获取环境:
 
@@ -36,6 +38,8 @@ $ docker run -d -p 80:80 -p 9001:9001 medicean/vulapps:s_supervisor_1
  访问 http://127.0.0.1:80 看到 web 界面即启动成功
 
 #### Exp
+
+**注意：该 Exp 会导致 supervisord 进程退出，生产环境中请慎用**
 
 反弹 Shell
 
