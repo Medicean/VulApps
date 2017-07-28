@@ -6,11 +6,23 @@ Supervisor 是用 Python 开发的一套通用的进程管理程序，能将一�
 
 在获取该接口的访问权限后，远程攻击者可发送一段精心构造的请求，可在服务器执行任意代码。
 
+详细信息参考：[[CVE-2017-11610] RCE vulnerability report](https://github.com/Supervisor/supervisor/issues/964)
+
 ### 影响版本
 
-已经确认：
+大于 3.0
 
-* Supervisor 3.1.2 <= Version <= 3.3.2 
+#### 已经确认：
+
+* Supervisor 3.1.2 
+* Supervisor 3.3.2
+
+#### 已修复此漏洞版本
+
+* Supervisor 3.3.3
+* Supervisor 3.2.4
+* Superivsor 3.1.4
+* Supervisor 3.0.1
 
 ### 镜像信息
 
@@ -37,11 +49,55 @@ $ docker run -d -p 80:80 -p 9001:9001 medicean/vulapps:s_supervisor_1
 
  访问 http://127.0.0.1:80 看到 web 界面即启动成功
 
+#### PoC
+
+[查看巡风检测脚本](https://github.com/ysrc/xunfeng/pull/117/)
+
+无损化检测时可发送该报文，检测返回版本号：
+
+```
+POST /RPC2 HTTP/1.1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:52.0) Gecko/20100101 Firefox/52.0
+Accept: text/xml
+Content-Type: text/xml
+Accept-Language: en-GB,en;q=0.5
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Content-Length: 110
+Host: 127.0.0.1:9001
+
+<?xml version="1.0"?>
+<methodCall>
+<methodName>supervisor.getSupervisorVersion</methodName>
+</methodCall>
+```
+
+返回内容如下：
+
+```
+HTTP/1.1 200 OK
+Date: Fri, 28 Jul 2017 05:08:47 GMT
+Content-Length: 131
+Content-Type: text/xml
+Server: Medusa/1.12
+
+<?xml version='1.0'?>
+<methodResponse>
+<params>
+<param>
+<value><string>3.3.2</string></value>
+</param>
+</params>
+</methodResponse>
+```
+
+如果提示 401 未认证错误，可在请求头中添加 HTTP基础认证
+
 #### Exp
 
-**注意：该 Exp 会导致 supervisord 进程退出，生产环境中请慎用**
+**注意：**该 Exp 使用的`execve`, 如果存在漏洞，会将 `supervisord` 进程替换成指定的程序(本 Exp 中将会替换成 `/usr/bin/python`)，换言之，会导致`supervisord`进程退出，**生产环境中请慎用**
 
-反弹 Shell
+反弹 Shell 演示：
 
 > 假定启动后的环境如下：
 >
