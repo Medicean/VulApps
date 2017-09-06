@@ -25,6 +25,8 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-052
 
 #### Exp
 
+ 来源：[Tomcat部署war - caiqiiqi的博客](http://blog.csdn.net/caiqiiqi/article/details/77861477)
+
 执行 `/usr/bin/touch /tmp/vuln` 命令：
 
 ```
@@ -48,13 +50,24 @@ Upgrade-Insecure-Requests: 1
 </map>
 ```
 
-发送之后，会在目标主机创建 /tmp/vuln 文件
+发送之后，会在目标主机创建 `/tmp/vuln` 文件
 
 **注意**
 
 `POST /orders` 这个链接在本例中是这样请求的，在实际测试过程中可以直接对站点根目录请求 `POST /`
 
+### 修复建议
+
+1. 升级Apache struts 至 2.5.13 版本
+
+2. 如果系统没有使用Struts REST插件，那么可以直接删除Struts REST插件，或者在配置文件中加入如下代码，限制服务端文件的扩展名
+
+```
+<constant name="struts.action.extension" value="xhtml,,json" />
+```
+
 ### 参考链接
 
 * [Using QL to find a remote code execution vulnerability in Apache Struts (CVE-2017-9805)](https://lgtm.com/blog/apache_struts_CVE-2017-9805)
-
+* [【漏洞预警】Apache Struts2插件高危漏洞(S2-052)](http://bobao.360.cn/news/detail/4291.html)
+* [Tomcat部署war - caiqiiqi的博客](http://blog.csdn.net/caiqiiqi/article/details/77861477)
