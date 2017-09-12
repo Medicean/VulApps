@@ -56,7 +56,7 @@ $ docker run -d -p 8080:8080 medicean/vulapps:j_jboss_1
 
  2. 使用 [Jexboss](https://github.com/joaomatosf/jexboss)
 
- ![](https://github.com/Medicean/VulApps/raw/master/j/jboss/1/exp-3.png)
+ ![](https://github.com/Medicean/VulApps/raw/master/j/jboss/1/exp-2.png)
 
 ### 相关链接
  * [Jexboss](https://github.com/joaomatosf/jexboss)
