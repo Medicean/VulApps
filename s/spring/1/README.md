@@ -28,8 +28,6 @@ $ docker run -d -p 8080:8080 medicean/vulapps:s_spring_1
 
 1. 访问 `http://127.0.0.1:8080/`，测试服务是否启动成功
 
- > 第一次启动时会下载 mongodb，网速慢的可能要多等一会儿
-
  ![](https://github.com/Medicean/VulApps/raw/master/s/spring/1/poc-1.png)
 
 2. 利用 POST 请求添加一个数据
@@ -66,3 +64,7 @@ Content-Length: 228
 ### 参考链接
 
 * [这个Spring高危漏洞，你修补了吗？--  其河@美团点评技术团队](https://mp.weixin.qq.com/s/uTiWDsPKEjTkN6z9QNLtSA)
+
+### 改动日志
+
+* 2017/09/29 删除原 jar 包中 mongodb 依赖

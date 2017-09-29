@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk
 MAINTAINER Medici.Yan@Gmail.com
 
-ENV JAR_URL http://vulapps.poetn.cc/s/spring/spring-data-rest/spring-data-rest-cve-2017-8046.jar
+ENV JAR_URL http://vulapps.poetn.cc/s/spring/spring-data-rest/spring-data-rest-cve-2017-8046_v2.jar
 
 COPY src/start.sh /start.sh
 
