@@ -1,0 +1,151 @@
+$padding-title-header
+    &:before
+        display block
+        content " "
+        margin-top -60px
+        height 75px
+        visibility hidden
+.post
+    position relative
+    top rem(500px)
+    background #fff
+.post-content
+    padding rem(40px) 0
+    img
+        max-width 100%
+        margin rem(30px) auto
+        display block
+    p, h1, h2, h3, h4,ul,ol, .tags, iframe, .button-post
+        center(rem(800px))
+        padding 0 rem(20px)
+        margin 0 auto rem(30px)
+        mainFont(300)
+        font-size rem(18px)
+        line-height 2
+        letter-spacing 0.01rem
+        +above(cut)
+            font-size rem(20px)
+    li 
+        padding rem(10px) 0
+        ul 
+        margin-bottom 0
+    p,li
+        color texts
+        code
+            color main
+            word-wrap break-word
+    a
+        color main
+        border-bottom 2px dashed main
+        mainFont(300)
+        text-decoration none
+        transition all .3s
+        &:hover
+            background main
+            color #fff
+    .externalLink:after
+        display inline-block
+        content ''
+        color main
+        background-image url('../img/external.svg')
+        background-size 100%
+        margin-left rem(5px)
+        width rem(18px)
+        height rem(18px)
+    iframe
+        margin-top rem(30px)
+        width 100%
+    #twitter-widget-0, 
+    .instagram-media
+    	margin auto !important
+    h1,h2,h3,h4,h5
+        mainFont(800)
+        @extend $padding-title-header
+    h1
+        font-size rem(30px)
+        line-height 1.4
+        +above(cut)
+            font-size rem(45px)
+    h2
+        font-size rem(22px)
+        line-height 1.4
+        +above(cut)
+            font-size rem(35px)
+    h3
+        font-size rem(18px)
+        line-height 1.4
+        +above(cut)
+            font-size rem(25px)
+    ul,ol
+        padding-left rem(40px)
+    ul.post-list
+        padding 0
+        &.svg-serie p
+            padding 0
+        +below(cut)
+            padding 0 rem(20px)
+    blockquote
+        center(rem(730px))
+        border-left rem(5px) solid main
+        padding 0 rem(30px)
+        margin rem(50px) auto
+        +below(cut)
+            width 90%
+        p
+            color rgba(0,0,0,0.6)
+            margin 0
+            +below(cut)
+                font-size rem(18px)
+                line-height 1.5
+                padding 0
+    hr
+    	center(rem(760px))
+    	border 1px solid lightGray
+    	margin 50px auto
+
+    > table
+        margin rem(50px) auto
+        +below(cut)
+            display none
+        th, td
+            border rem(2px) solid #ccc
+            padding rem(5px)
+    
+    td > pre
+        padding 0
+        margin 0
+    
+    td.gutter.gl
+        padding-right rem(25px)
+        line-height rem(24px)
+
+.tag-title
+    mainFont(300)
+    font-size rem(36px)
+    margin-top rem(60px)
+    center(rem(800px))
+    @extend $padding-title-header
+    +below(cut)
+        font-size rem(28px)
+        margin-top rem(20px)
+        padding 0 rem(20px)
+
+.post-list
+    list-style none
+    margin rem(25px) auto
+    +below(cut)
+        padding 0 rem(20px)
+    a
+        display block
+        border-bottom 1px solid darken(lightGray,10%)
+        padding rem(10px) 0
+        text-decoration none
+        transition all .5s
+        &:hover
+            color darken(main, 50%)
+            border-bottom 1px solid darken(main, 50%)
+            background #fff
+    .entry-date
+        float right
+        +below(cut)
+            display none

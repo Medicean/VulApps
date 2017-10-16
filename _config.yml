@@ -1,0 +1,39 @@
+# Site settings
+title: VulApps
+description: VulApps 旨在快速搭建各种漏洞环境与安全工具环境，启动无需其它步骤，即开即用。
+# baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: VulApps
+user_description: VulApps
+email: Medici.Yan@Gmail.com
+github_username:  Medicean
+disqus_username: vulapps
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: 首页
+    url: /
+  - title: 组件
+    url: /series
+  - title: 标签
+    url: /tags
+  - title: 关于
+    url: /about
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']

@@ -1,0 +1,70 @@
+html,
+body
+	height 100%
+
+$bg
+	background-color main
+	.content
+		width 95%
+		text-align center
+		padding rem(140px) 0 rem(66px)
+
+.bar-header
+	background sec
+	padding rem(10px) rem(20px)
+	box-shadow 0 -3px 9px #000
+	position fixed
+	width 100%
+	z-index 10
+	.logo
+		margin 0
+		line-height rem(35px)
+	.logo a
+		color main
+		text-decoration none
+		font-size rem(28px)
+		&:after
+			transition all .4s
+			content 'VulApps'
+			+above(cut)
+				content 'VulApps'
+
+// Header Post
+.header-post
+	@extends $bg
+	min-height rem(500px)
+	position fixed
+	width 100%
+	.content
+		margin auto
+		max-width rem(800px)
+	.subheader
+		display table
+		padding 20px
+		a
+			border 2px solid sec
+			border-radius 20px
+			padding 0 10px
+			+above(cut)
+				padding 0 10px
+
+	.date
+		mainFont(300)
+		font-size rem(16px)
+	h1
+		font-size rem(30px)
+		margin 0 0 30px    
+		text-shadow 3px 3px darken(main, 20%)
+		+above(cut)
+			font-size rem(60px)
+	.subtitle
+		mainFont(300)
+		font-size rem(20px)
+	h1,.subtitle, .date
+		color sec
+		text-align center
+	a,p
+		color sec
+		text-decoration none
+		mainFont(300)
+		font-size rem(18px)

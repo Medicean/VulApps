@@ -1,0 +1,104 @@
+main
+    padding-top rem(100px)
+
+.row
+    center(rem(1030px))
+    
+.flex-grid
+    display flex
+    flex-flow row wrap
+
+.title-category
+    center(rem(1000px))
+    font-size rem(40px)
+    margin-top 0
+    text-transform uppercase
+    padding 0 rem(15px)
+
+.box-item
+    flex 1 0 300px
+    margin 0 rem(15px) rem(50px)
+    display inline-block
+    border 1px solid #eee
+    border-radius 5px
+    min-height rem(285px)
+    transition all .3s
+    position relative
+    cursor: pointer
+
+    &:hover
+        box-shadow 1px 2px 10px #eee
+    a
+        text-decoration none
+        &:hover
+            .box-item
+                box-shadow 10px 10px 10px #eee
+    .box-body
+        padding rem(25px)
+        time
+            font-size rem(14px)
+            color #b2bac2
+        h2
+            margin rem(5px) 0 rem(15px)
+            font-size rem(20px)
+            mainFont(800)
+            color main
+            span
+                color 
+        p
+            margin 0 0 rem(20px)
+            color #576366
+            font-size rem(14px)
+            line-height rem(22px)
+        .tags a
+            color main
+            padding rem(5px) rem(10px)
+            border-radius 3px
+            display inline-block
+            margin 0 0 rem(5px)
+            z-index 50
+
+.ribbon
+    position absolute
+    right -5px 
+    top -5px
+    z-index 1
+    overflow hidden
+    width 75px 
+    height 75px
+    text-align right
+    span 
+        font-size rem(12px)
+        font-weight bold
+        color #FFF
+        text-transform uppercase
+        text-align center
+        line-height 20px
+        transform rotate(45deg)
+        -webkit-transform rotate(45deg)
+        width 100px
+        display block
+        background #B31917
+        position absolute
+        top 19px 
+        right: -21px
+        &:before
+            content ""
+            position absolute
+            left 0px
+            top 100%
+            z-index -1
+            border-left 3px solid main
+            border-right 3px solid transparent
+            border-bottom 3px solid transparent
+            border-top 3px solid main
+        &:after 
+            content ""
+            position absolute 
+            right 0px 
+            top 100%
+            z-index -1
+            border-left 3px solid transparent
+            border-right 3px solid main
+            border-bottom 3px solid transparent
+            border-top 3px solid main

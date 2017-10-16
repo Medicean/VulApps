@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+    <div id="grid" class="row flex-grid">
+    {% for post in site.posts %}
+        <article class="box-item post-{{post.main-class}}" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+            <span class="ribbon">
+                <a href="{{site.url}}{{site.baseurl}}/category/{{post.main-class}}"><span>{{post.main-class}}</span></a>
+            </span>
+            <div class="box-body">
+                <meta itemprop="datePublished" content="{{post.date | date_to_xmlschema }}">
+                <time itemprop="datePublished" datetime="{{ post.date }}" class="date">{{ post.date | date_to_string }}</time>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                    <h2 class="post-title" itemprop="name">
+                        {{ post.title }}
+                    </h2>
+                </a>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                    <p class="description">{{ post.introduction }}</p>
+                </a>
+                <div class="tags">
+                    {% for tag in post.tags %}
+                        <a href="{{site.baseurl}}/tags/#{{tag | slugify }}">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+</main>

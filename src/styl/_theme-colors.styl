@@ -1,0 +1,82 @@
+themes = {
+    post-hole: #B31917,
+    post-warning: #EB7728,
+    post-low: #7D669E,
+    post-jekyll: #B31917,
+    post-css: #2DA0C3,
+    post-js: #D6BA32,
+    post-html: #EB7728,
+    post-svg: #7D669E,
+    post-dev: #637a91,
+    post-misc: #7AAB13
+}
+
+for theme, category-color in themes
+    .{theme}
+        .title-category
+            color category-color
+        .post-content
+            h1,h2,h3,h4
+                color category-color
+            a
+                color category-color
+                border-bottom 2px dashed category-color
+                &:hover
+                    background-color category-color
+                    color #fff
+            strong
+                color category-color
+            p,
+            li
+                code
+                    color category-color
+            blockquote
+                border-left .313rem solid category-color
+
+        .header-post,
+        .header-site
+            background-color category-color
+            h1
+                text-shadow 3px 3px darken(category-color, 20%)
+        .bar-header
+            .logo a
+                color category-color
+        .author .email,
+        .author .github
+            color category-color
+
+        .share a
+            &:hover svg
+                fill category-color
+                
+        body
+            &.search-overlay 
+                &:after
+                    +below(cut)
+                        background-color category-color
+        .icon-menu
+            fill category-color
+            
+        .box-body
+            h2
+                color category-color
+            .tags a
+                color category-color
+                border 1px solid category-color
+                &:hover
+                    color: #fff
+                    background: category-color
+        aside
+            background-color category-color
+            nav li a:hover
+                color category-color
+        .ribbon span
+            background-color category-color
+            &:before
+                border-left 3px solid darken(category-color, 30%)
+                border-top 3px solid darken(category-color, 30%)
+            &:after
+                border-right 3px solid darken(category-color, 30%)
+                border-top 3px solid darken(category-color, 30%)
+        footer
+            background-color category-color
