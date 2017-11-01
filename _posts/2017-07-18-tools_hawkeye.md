@@ -34,12 +34,12 @@ Hawkeye 端口 | 80 | -
 ### 获取环境
 
 1. 拉取镜像到本地
- ```
+ ```bash
 $ docker pull medicean/vulapps:tools_hawkeye
  ```
 
 2. 启动环境
- ```
+ ```bash
 $ docker run -d -p 8000:80 -e GITHUB_USER=xxxx -e GITHUB_PASSWORD=xxxx medicean/vulapps:tools_hawkeye
  ```
  > `-p 8000:80` 前面的 8000 代表物理机的端口，可随意指定。 
@@ -68,7 +68,7 @@ SMTP 服务器端口 | `MAIL_PORT` | 587
 
  eg: 指定一个 QQ 邮箱来作为发信邮箱(默认使用的是QQ的发信服务器，所以不需要设置)：
  
- ```
+ ```bash
  $ docker run -d -p 8000:80 -e GITHUB_USER=xxxx -e GITHUB_PASSWORD=xxxx -e MAIL_USER =546074829@qq.com -e MAIL_PASSWORD=123456 medicean/vulapps:tools_hawkeye
  ```
 

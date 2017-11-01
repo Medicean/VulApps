@@ -50,12 +50,12 @@ http://127.0.0.1/9001/RPC2 | vulapps | vulapps
 ### 获取环境:
 
 1. 拉取镜像到本地
- ```
+ ```bash
 $ docker pull medicean/vulapps:s_supervisor_1
  ```
 
 2. 启动环境
- ```
+ ```bash
 $ docker run -d -p 80:80 -p 9001:9001 medicean/vulapps:s_supervisor_1
  ```
  > `-p 80:80` 前面的 80 代表物理机的端口，可随意指定。 
