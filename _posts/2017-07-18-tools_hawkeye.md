@@ -28,6 +28,7 @@ introduction: '监控 github 代码库，及时发现员工托管公司代码到
 类型 | 用户名 | 密码
 :-:|:-:|:-:
 mongodb | 空 | 空
+mongodb路径 | /var/lib/mongodb | -
 Hawkeye路径 | /opt/hawkeye | -
 Hawkeye 端口 | 80 | -
 
@@ -73,6 +74,14 @@ SMTP 服务器端口 | `MAIL_PORT` | 587
  ```
 
  > 如果使用QQ邮箱，这里不需要使用真实的密码，可在 QQ 邮箱-> 设置 -> 账户 中设置授权码
+
+ **如果将来数据量可能会很大，建议在创建容器的时候，把 mongodb 数据目录挂载到物理机。**启动时只需要添加 `-v` 参数，具体参数值如下：
+
+ ```bash
+ $ docker run -d -p 8000:80 -e GITHUB_USER=xxxx -e GITHUB_PASSWORD=xxxx -e MAIL_USER =546074829@qq.com -e MAIL_PASSWORD=123456 -v /var/hawkeye:/var/lib/mongodb medicean/vulapps:tools_hawkeye 
+ ```
+
+ > `/var/hawkeye` 是物理机上的目录，随意指定，确保存在即可
 
 ### 截图
 
