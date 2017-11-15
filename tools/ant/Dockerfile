@@ -32,7 +32,7 @@ RUN apt-get update \
 ENV PATH /opt/node/bin:/opt/mongodb/bin:$PATH
 
 VOLUME /var/data
-ARG ANT_ZIP=http://oe58q5lw3.bkt.clouddn.com/tools/ant/ant-1.0.zip
+ARG ANT_ZIP=http://www.qingges.com/tools/ant/ant-1.0.zip
 RUN apt-get update \
     && apt-get install -y wget unzip \
     && wget -qO /tmp/ant.zip $ANT_ZIP \
