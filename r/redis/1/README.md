@@ -34,7 +34,7 @@ $ docker pull medicean/vulapps:r_redis_1
 2. 启动环境
 
  ```
-$ docker run --name=redisvul -d -p 22:22 -p 6379:6379 medicean/vulapps:r_redis_1
+$ docker run --name=redisvul -d -p 6379:6379 medicean/vulapps:r_redis_1
  ```
  > `-p 22:22` 前面的 22 代表物理机的端口，可随意指定。
  >
