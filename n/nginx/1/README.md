@@ -63,7 +63,7 @@ Accept-Ranges: bytes
 2. 请求时设置 range 如下：
 
 ```
-$ curl -i http://127.0.0.1:8000/proxy/demo.png -r -17208,-9223372036854758600
+$ curl -i http://127.0.0.1:8000/proxy/demo.png -H "Content-Type: image/png; charset=GBK" -r -17208,-9223372036854758600
 ```
 
 看到结果：
