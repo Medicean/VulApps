@@ -119,3 +119,4 @@ $ docker run -d -p 8000:80 medicean/vulapps:g_git_1
 
 * [Git爆远程代码执行漏洞，建议尽快升级](https://mp.weixin.qq.com/s/2TitRx1iGnKgqpYzLqA14w)
 * [Upgrading git for the May 2018 Security Release](https://www.edwardthomson.com/blog/upgrading_git_for_cve2018_11235.html)
+* [Rogdham/CVE-2018-11235](https://github.com/Rogdham/CVE-2018-11235)
