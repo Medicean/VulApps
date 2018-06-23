@@ -40,7 +40,7 @@ $ docker run -d -p 8000:3000 medicean/vulapps:tools_ant
  
  类型 | 环境变量名 | 默认
 :-:|:-:|:-:
-邮箱账号 | `EMAIL_ADDRESS` | email@user.com
+邮箱账号 | `EMAIL_ADDR` | email@user.com
 邮箱密码 | `EMAIL_PASSWORD` | email-password
 SMTP服务器 | `SMTP_HOST` | smtp.qq.com
 SMTP服务端口 | `SMTP_PORT` | 465
@@ -48,7 +48,7 @@ SMTP服务端口 | `SMTP_PORT` | 465
  eg: 指定一个 QQ 邮箱来作为发信邮箱(默认使用的是QQ的发信服务器，所以不需要设置)：
  
  ```
- $ docker run -d -p 8000:3000 -e EMAIL_ADDRESS=546074829@qq.com -e EMAIL_PASSWORD=123456 medicean/vulapps:tools_ant
+ $ docker run -d -p 8000:3000 -e EMAIL_ADDR=546074829@qq.com -e EMAIL_PASSWORD=123456 medicean/vulapps:tools_ant
  ```
 
  **挂载点**
