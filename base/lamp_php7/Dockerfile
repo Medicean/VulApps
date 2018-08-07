@@ -18,6 +18,8 @@ RUN apt-get install -y mysql-client mysql-server \
     && /etc/init.d/mysql start \
     && mysqladmin -u root password "root"
 
+RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+
 #RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 # start mysqld to create initial tables
 #RUN service mysqld start
