@@ -1,7 +1,7 @@
 FROM tomcat:8-jre8
 MAINTAINER 0x0keeper@gmail.com
 
-ENV WAR_URL http://ocnf2x3pk.bkt.clouddn.com/S2-019.war
+ENV WAR_URL http://vulapps.xuanbo.cc/s/struts2/struts2/S2-019.war
 
 WORKDIR /tmp
 

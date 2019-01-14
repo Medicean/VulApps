@@ -3,7 +3,7 @@ MAINTAINER cnsolu@163.com
 
 COPY src/mailpress.sql /tmp/mailpress.sql
 
-ENV PLUGIN_URL http://oe58q5lw3.bkt.clouddn.com/w/wordpress/plugins/mailpress-5.4.2.zip
+ENV PLUGIN_URL http://vulapps.xuanbo.cc/w/wordpress/plugins/mailpress-5.4.2.zip
 RUN apt-get install -y wget unzip
 
 RUN set -x \

@@ -10,7 +10,7 @@ WORKDIR /tmp
 RUN apt-get update \
     && apt-get install -y libyaml-dev 
 
-RUN curl -fSL "http://oe58q5lw3.bkt.clouddn.com/y/yaml/yaml/yaml-${YAML_VERSION}.tgz" -o /tmp/yaml.tgz \
+RUN curl -fSL "http://vulapps.xuanbo.cc/y/yaml/yaml/yaml-${YAML_VERSION}.tgz" -o /tmp/yaml.tgz \
     && echo "${YAML_MD5} /tmp/yaml.tgz" | md5sum -c - \
     && tar -zxvf /tmp/yaml.tgz \
     && cd /tmp/yaml-${YAML_VERSION}/ \

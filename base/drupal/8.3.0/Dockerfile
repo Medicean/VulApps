@@ -12,7 +12,7 @@ COPY src/files.tar.gz /tmp/files.tar.gz
 ENV DRUPAL_VERSION 8.3.0
 ENV DRUPAL_MD5 1dcce599eddba07eb00e8879937525c3
 
-RUN curl -fSL "http://oe58q5lw3.bkt.clouddn.com/d/drupal/drupal/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz \
+RUN curl -fSL "http://vulapps.xuanbo.cc/d/drupal/drupal/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz \
     && echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c - \
     && tar -xz --strip-components=1 -f drupal.tar.gz \
     && rm drupal.tar.gz \

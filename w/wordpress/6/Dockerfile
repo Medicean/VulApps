@@ -1,8 +1,8 @@
 FROM medicean/vulapps:base_lamp
 MAINTAINER Medici.Yan <Medici.Yan@Gmail.com>
 
-ARG WP_URL=http://oe58q5lw3.bkt.clouddn.com/w/wordpress/wordpress/wordpress-4.6.tar.gz
-ARG WPCLI_URL=http://oe58q5lw3.bkt.clouddn.com/w/wordpress/wp-cli/wp-cli.phar
+ARG WP_URL=http://vulapps.xuanbo.cc/w/wordpress/wordpress/wordpress-4.6.tar.gz
+ARG WPCLI_URL=http://vulapps.xuanbo.cc/w/wordpress/wp-cli/wp-cli.phar
 
 COPY src/wordpress.sql /tmp/wordpress.sql
 COPY src/apache2.conf /etc/apache2/apache2.conf

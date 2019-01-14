@@ -1,7 +1,7 @@
 FROM medicean/vulapps:base_lamp
 MAINTAINER Medici.Yan <Medici.Yan@Gmail.com>
 
-ENV STATIC_URL_JOOMLA http://oe58q5lw3.bkt.clouddn.com/j/joomla/joomla/3.5.tar.gz
+ENV STATIC_URL_JOOMLA http://vulapps.xuanbo.cc/j/joomla/joomla/3.5.tar.gz
 
 RUN set -x \
     && apt-get install -y php5-mysql php5-dev php5-gd php5-memcache php5-pspell php5-snmp snmp php5-xmlrpc libapache2-mod-php5 php5-cli wget\

@@ -1,7 +1,7 @@
 FROM tomcat:8-jre8
 MAINTAINER Medici.Yan@Gmail.com
 
-ENV WAR_URL http://oe58q5lw3.bkt.clouddn.com/s/shiro/shiro/shiro-1.2.4-samples-web.war
+ENV WAR_URL http://vulapps.xuanbo.cc/s/shiro/shiro/shiro-1.2.4-samples-web.war
 
 WORKDIR /tmp
 

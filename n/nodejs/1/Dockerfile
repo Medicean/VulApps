@@ -6,7 +6,7 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # install nodejs
-ARG NODE_URL=http://oe58q5lw3.bkt.clouddn.com/n/nodejs/nodejs/node-v4.3.2-linux-x64.tar.gz
+ARG NODE_URL=http://vulapps.xuanbo.cc/n/nodejs/nodejs/node-v4.3.2-linux-x64.tar.gz
 RUN apt-get update \
     && apt-get install -y wget unzip \
     && wget -qO /tmp/nodejs.tar.gz $NODE_URL \

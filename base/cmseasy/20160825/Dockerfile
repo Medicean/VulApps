@@ -1,7 +1,7 @@
 FROM medicean/vulapps:base_lamp
 MAINTAINER Medici.Yan <Medici.Yan@Gmail.com>
 
-ENV CMSEASY_URL http://oe58q5lw3.bkt.clouddn.com/c/cmseasy/cmseasy/CmsEasy_5.6_UTF-8_20160825.tar.gz
+ENV CMSEASY_URL http://vulapps.xuanbo.cc/c/cmseasy/cmseasy/CmsEasy_5.6_UTF-8_20160825.tar.gz
 
 # COPY src/CmsEasy_5.6_UTF-8_20160825.tar.gz /tmp/cmseasy.tar.gz
 COPY src/cmseasy.sql /tmp/cmseasy.sql

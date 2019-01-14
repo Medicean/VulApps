@@ -1,7 +1,7 @@
 FROM medicean/vulapps:base_lamp
 MAINTAINER Medici.Yan <Medici.Yan@Gmail.com>
 
-ENV STATIC_URL_JOOMLA http://oe58q5lw3.bkt.clouddn.com/j/joomla/joomla/joomla-3.7.0.zip
+ENV STATIC_URL_JOOMLA http://vulapps.xuanbo.cc/j/joomla/joomla/joomla-3.7.0.zip
 # COPY src/joomla_3.7.0.zip /tmp/joomla-3.7.0.zip
 
 RUN set -x \

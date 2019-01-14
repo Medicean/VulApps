@@ -9,7 +9,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
 ### Install Node.js
-ARG NODE_URL=http://oe58q5lw3.bkt.clouddn.com/n/nodejs/nodejs/node-v4.3.2-linux-x64.tar.gz
+ARG NODE_URL=http://vulapps.xuanbo.cc/n/nodejs/nodejs/node-v4.3.2-linux-x64.tar.gz
 RUN apt-get update \
     && apt-get install -y wget \
     && wget -qO /tmp/nodejs.tar.gz $NODE_URL \
@@ -20,7 +20,7 @@ RUN apt-get update \
     && rm -f /tmp/nodejs.tar.gz \
     && mkdir -p /htdocs
 
-ARG MONGO_URL=http://oe58q5lw3.bkt.clouddn.com/m/mongodb/mongodb/mongodb-linux-x86_64-ubuntu1404-3.2.0.tgz
+ARG MONGO_URL=http://vulapps.xuanbo.cc/m/mongodb/mongodb/mongodb-linux-x86_64-ubuntu1404-3.2.0.tgz
 RUN apt-get update \
     && apt-get install -y wget \
     && wget -qO /tmp/mongodb.tgz $MONGO_URL \
@@ -32,7 +32,7 @@ RUN apt-get update \
 ENV PATH /opt/node/bin:/opt/mongodb/bin:$PATH
 
 VOLUME /var/data
-ARG ANT_ZIP=http://oe58q5lw3.bkt.clouddn.com/tools/ant/ant-1.0.zip
+ARG ANT_ZIP=http://vulapps.xuanbo.cc/tools/ant/ant-1.0.zip
 RUN apt-get update \
     && apt-get install -y wget unzip \
     && wget -qO /tmp/ant.zip $ANT_ZIP \
