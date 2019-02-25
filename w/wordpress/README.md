@@ -7,3 +7,4 @@ WordPress
 4. [WordPress Plugin Product Catalog 8 1.2.0 SQL注入漏洞](4/)
 5. [WordPress 4.7.0/4.7.1 REST API 内容注入漏洞](5/)
 6. [WordPress <= 4.6 命令执行漏洞(PHPMailer)(CVE-2016-10033)](6/)
+7. [WordPress 5.0.0 远程代码执行漏洞(CVE-2019-8942 CVE-2019-8943)](7/)
