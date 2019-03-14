@@ -1,7 +1,7 @@
 FROM medicean/vulapps:base_wordpress
 MAINTAINER Medici.Yan@Gmail.com
 
-ENV STATIC_DOMAIN http://oe58q5lw3.bkt.clouddn.com
+ENV STATIC_DOMAIN http://vulapps.xuanbo.cc
 ENV PLUGIN_NAME product-catalog-8
 ENV PLUGIN_VERSION 1.2
 
