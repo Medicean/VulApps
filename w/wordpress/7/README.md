@@ -26,7 +26,7 @@ WordPress <= 5.0.0
 :-:|:-:|:-:
 Mysql | root | root
 /wp-admin/ | admin | admin4wp498
-/wp-admin/ | author | admin4wp498
+/wp-admin/ | author | author4wp498
 
 ### 获取环境:
 
