@@ -1,10 +1,10 @@
-## Struts2 S2-001 漏洞环境
+## Struts2 S2-007 漏洞环境
 
 ### 漏洞信息
 
  * [S2-007 公告](http://struts.apache.org/docs/s2-007.html)
 
-参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html)
+参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities)
 
 ### 获取环境:
 
