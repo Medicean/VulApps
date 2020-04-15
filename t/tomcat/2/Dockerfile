@@ -1,0 +1,3 @@
+FROM tomcat:8.5.32
+
+EXPOSE 8080
